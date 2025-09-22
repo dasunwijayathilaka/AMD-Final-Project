@@ -206,7 +206,11 @@ const TaskFormScreen = () => {
             }}
             className="mb-8"
           >
-           tion & Notes
+            <View className="bg-white rounded-3xl p-6 border border-gray-100 shadow-lg">
+              <View className="flex-row items-center mb-4">
+                <View className="bg-red-500 w-3 h-8 rounded-full mr-3" />
+                <Text className="text-gray-800 text-lg sm:text-xl font-bold">
+                  Description & Notes
                 </Text>
               </View>
               <View className="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
