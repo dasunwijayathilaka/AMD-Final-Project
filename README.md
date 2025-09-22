@@ -12,11 +12,12 @@ Built with **React Native** ⚛️, it enables users to **add, edit, delete, and
 
 | Login Screen | Workout List | Add Workout |
 |--------------|--------------|--------------|
-| ![Login](assets/screenshots/login.png) | ![Workout List](assets/screenshots/workout-list.png) | ![Add Workout](assets/screenshots/add-workout.png) |
 
-*(Add your real screenshots inside an `assets/screenshots/` folder in your repo.)*  
+<img width="875" height="573" alt="Screenshot 2025-09-22 101803" src="https://github.com/user-attachments/assets/cd88d44b-284a-477d-bbb4-8f33c949b4e5" />
 
----
+
+---<
+
 
 ## ✨ Features
 
