@@ -30,6 +30,13 @@ const TaskFormScreen = () => {
   const { hideLoader, showLoader } = useLoader();
   const { user } = useAuth();
 
+  // Animation references
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const slideAnim = useRef(new Animated.Value(30)).current;
+  const cardAnim1 = useRef(new Animated.Value(0)).current;
+  const cardAnim2 = useRef(new Animated.Value(0)).current;
+  const buttonAnim = useRef(new Animated.Value(0)).current;
+
   useEffect(() => {
     // Entrance animations
     Animated.sequence([
