@@ -129,7 +129,11 @@ const TaskFormScreen = () => {
             }}
             className="mb-8"
           >
-
+            <View className="bg-white/90 backdrop-blur-xl rounded-3xl p-6 border border-red-100 shadow-2xl shadow-red-500/10">
+              <View className="flex-row items-center justify-between mb-4">
+                <View className="flex-row items-center">
+                  <View className="bg-red-500/20 w-12 h-12 rounded-2xl items-center justify-center mr-4">
+                    <Ionicons
                       name={isNew ? "add-circle-outline" : "create-outline"}
                       size={24}
                       color="#dc2626"
