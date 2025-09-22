@@ -155,7 +155,20 @@ const TaskFormScreen = () => {
           </Animated.View>
 
           {/* Title Input Card with Modern Glass Design */}
-
+          <Animated.View
+            style={{
+              opacity: cardAnim1,
+              transform: [
+                {
+                  scale: cardAnim1.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0.95, 1],
+                  }),
+                },
+                { translateY: Animated.multiply(cardAnim1, -10) },
+              ],
+            }}
+            className="mb-6"
           >
             <View className="bg-white rounded-3xl p-6 border border-gray-100 shadow-lg">
               <View className="flex-row items-center mb-4">
