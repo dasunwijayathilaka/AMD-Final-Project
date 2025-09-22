@@ -71,7 +71,12 @@ const TaskFormScreen = () => {
       ]),
     ]).start();
 
-
+    const load = async () => {
+      if (!isNew && id) {
+        try {
+          showLoader();
+          const task = await getTaskId(id);
+          if (task) {
             setTitle(task.title);
             setDescription(task.description);
           }
