@@ -233,7 +233,19 @@ const TaskFormScreen = () => {
             </View>
           </Animated.View>
 
-
+          {/* Action Buttons with Gradient and Glass Effect */}
+          <Animated.View
+            style={{
+              opacity: buttonAnim,
+              transform: [
+                {
+                  scale: buttonAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0.9, 1],
+                  }),
+                },
+              ],
+            }}
           >
             <TouchableOpacity
               onPress={handleSubmit}
