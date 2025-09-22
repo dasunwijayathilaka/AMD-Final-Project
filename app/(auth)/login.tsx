@@ -72,6 +72,7 @@ const Login = () => {
       router.push("/home");
       Alert.alert("Success", "Login successful!");
     } catch (error) {
+      console.log(error);
       Alert.alert("Login Failed", "Invalid credentials. Please try again.");
     } finally {
       setIsLoading(false);
