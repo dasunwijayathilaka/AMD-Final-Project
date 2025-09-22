@@ -10,8 +10,9 @@ Built with **React Native** ⚛️, it enables users to **add, edit, delete, and
 
 ## 📸 Screenshots
 
-| Login Screen | Workout List | Add Workout |
-|--------------|--------------|--------------|
+| Splash Screen | Login | Register | Dashboard | Workout List | Add Workout | Profile |
+|---------------|-------|----------|-----------|--------------|-------------|---------|
+
 
 <img width="875" height="573" alt="Screenshot 2025-09-22 101803" src="https://github.com/user-attachments/assets/cd88d44b-284a-477d-bbb4-8f33c949b4e5" />
 
