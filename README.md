@@ -2,7 +2,7 @@
 
 FitTrack is a mobile application designed to help users **plan, organize, and track** their daily workout routines.  
 Built with **React Native** ⚛️, it enables users to **add, edit, delete, and view exercises** while securely storing their data 🔐 using **Firebase** or a **Mock API**.
-## 🎥 Demo Video
+## 🎥 YouTube Video
 
 ▶️ [Watch on YouTube](https://youtu.be/your-demo-video-link)  
 
