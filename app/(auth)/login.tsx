@@ -132,13 +132,7 @@ const Login = () => {
         </Animated.View>
 
         {/* Login Form */}
-        <Animated.View
-          style={{
-            opacity: formAnim,
-            transform: [{ translateY: slideAnim }],
-          }}
-          className="bg-white rounded-3xl p-8 shadow-lg shadow-gray-200 border border-gray-100"
-        >
+
           {/* Email Input */}
           <View className="mb-6">
             <View className="flex-row items-center mb-3">
