@@ -8,6 +8,10 @@ Built with **React Native** ⚛️, it enables users to **add, edit, delete, and
 
 ---
 
+## 🎥 APK FILE
+▶️ https://drive.google.com/file/d/1zJ4ADQL9qRG96OZQ6wgzM09qR3aKq_Yz/view?usp=sharing
+
+---
 ## 📸 Screenshots
 
 | Splash Screen | Login | Register | Dashboard | Workout List | Add Workout | Profile |
