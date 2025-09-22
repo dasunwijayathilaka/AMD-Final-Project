@@ -95,6 +95,12 @@ const TaskFormScreen = () => {
     }
 
     try {
+      showLoader();
+      if (isNew) {
+        await createTask({ title, description, userId: user?.uid });
+      } else {
+        await updateTask(id, { title, description });
+      }
       router.back();
     } catch (err) {
       console.error(`Error ${isNew ? "saving" : "updating"} task`, err);
