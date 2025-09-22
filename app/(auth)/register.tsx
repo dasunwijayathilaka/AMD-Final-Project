@@ -162,17 +162,7 @@ const Register = () => {
             }}
             className="items-center mb-8"
           >
-            <View className="bg-red-500 w-20 h-20 rounded-3xl items-center justify-center mb-6 shadow-lg shadow-red-500/25">
-              <Ionicons name="person-add" size={40} color="white" />
-            </View>
-            <Text className="text-4xl font-black text-gray-900 mb-3">
-              Join FitnessApp
-            </Text>
-            <Text className="text-lg text-gray-600 text-center font-medium px-4">
-              Create your account to start your fitness journey and achieve your
-              goals
-            </Text>
-          </Animated.View>
+
 
           {/* Registration Form */}
           <Animated.View
