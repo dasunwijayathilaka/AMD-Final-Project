@@ -205,6 +205,30 @@ const Register = () => {
               </View>
             </View>
 
+            {/* Email Input */}
+            <View className="mb-6">
+              <View className="flex-row items-center mb-3">
+                <View className="bg-red-500 w-1 h-6 rounded-full mr-3" />
+                <Text className="text-gray-800 font-bold text-base">
+                  Email Address
+                </Text>
+              </View>
+              <View className="relative">
+                <TextInput
+                  placeholder="Enter your email address"
+                  className="px-5 py-4 text-base text-gray-900 bg-gray-50 border border-gray-200 rounded-2xl pr-14 focus:border-red-500"
+                  value={email}
+                  onChangeText={setEmail}
+                  keyboardType="email-address"
+                  autoCapitalize="none"
+                  style={{ fontSize: 16 }}
+                />
+                <View className="absolute right-4 top-4 bg-gray-100 w-8 h-8 rounded-xl items-center justify-center">
+                  <Ionicons name="mail-outline" size={18} color="#6b7280" />
+                </View>
+              </View>
+            </View>
+
             {/* Password Input */}
             <View className="mb-6">
               <View className="flex-row items-center mb-3">
