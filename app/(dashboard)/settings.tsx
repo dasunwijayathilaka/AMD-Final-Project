@@ -1,8 +1,18 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Alert, Image } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Alert,
+  Image,
+  ScrollView,
+  Dimensions,
+} from "react-native";
 import { useRouter } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { logOut } from "@/services/authService";
+
+const { width } = Dimensions.get("window");
 
 const SettingsScreen = () => {
   const router = useRouter();
@@ -16,36 +26,216 @@ const SettingsScreen = () => {
     }
   };
 
+  const settingsOptions = [
+    {
+      title: "Profile Settings",
+      subtitle: "Manage your personal information",
+      icon: "person-outline",
+      color: "bg-blue-100",
+      iconColor: "#2563eb",
+    },
+    {
+      title: "Workout Preferences",
+      subtitle: "Customize your training experience",
+      icon: "barbell-outline",
+      color: "bg-red-100",
+      iconColor: "#dc2626",
+    },
+    {
+      title: "Notifications",
+      subtitle: "Control your app notifications",
+      icon: "notifications-outline",
+      color: "bg-yellow-100",
+      iconColor: "#ca8a04",
+    },
+    {
+      title: "Privacy & Security",
+      subtitle: "Manage your data and security",
+      icon: "shield-checkmark-outline",
+      color: "bg-green-100",
+      iconColor: "#16a34a",
+    },
+    {
+      title: "Help & Support",
+      subtitle: "Get help and contact support",
+      icon: "help-circle-outline",
+      color: "bg-purple-100",
+      iconColor: "#9333ea",
+    },
+    {
+      title: "About",
+      subtitle: "App version and information",
+      icon: "information-circle-outline",
+      color: "bg-gray-100",
+      iconColor: "#6b7280",
+    },
+  ];
+
   return (
-    <View className="flex-1 bg-gray-100 px-6 py-10">
-      {/* Profile Header */}
-      <View className="items-center mb-10">
-        <Image
-          source={{
-            uri: "data:image/png;base64,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", // placeholder avatar
-          }}
-          className="w-24 h-24 rounded-full mb-4"
-        />
-        <Text className="text-xl font-semibold text-gray-900">This is Your logout page </Text>
-        <Text className="text-gray-500">click the below logout button to logout from the GymApp</Text>
-      </View>
+    <View className="flex-1 bg-gray-50">
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 32 }}
+      >
+        {/* Header with Profile */}
+        <View className="bg-gradient-to-br from-red-500 to-red-600 pt-16 pb-8 px-6 mb-6">
+          <View className="items-center">
+            <View className="relative">
+              <Image
+                source={{
+                  uri: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+                }}
+                className="w-24 h-24 rounded-full border-4 border-white/20"
+              />
+              <View className="absolute -bottom-2 -right-2 bg-white w-8 h-8 rounded-full items-center justify-center shadow-lg">
+                <MaterialIcons name="edit" size={16} color="#dc2626" />
+              </View>
+            </View>
 
-      {/* Settings Card */}
-      <View className="bg-white rounded-2xl shadow-md shadow-gray-300 p-6">
-        <Text className="text-lg font-semibold text-gray-800 mb-6">
-          Account
-        </Text>
+            <Text className="text-white text-2xl font-bold mt-4 mb-1">
+              John Doe
+            </Text>
+            <Text className="text-red-100 text-base">Fitness Enthusiast</Text>
 
-        {/* Logout Button */}
-        <TouchableOpacity
-          onPress={handleLogout}
-          activeOpacity={0.85}
-          className="flex-row items-center bg-black py-4 px-5 rounded-xl shadow-md shadow-red-400/40"
-        >
-          <Ionicons name="log-out-outline" size={22} color="white" />
-          <Text className="ml-3 text-white text-lg font-semibold">Logout</Text>
-        </TouchableOpacity>
-      </View>
+            <View className="flex-row mt-4 space-x-8">
+              <View className="items-center">
+                <Text className="text-white text-xl font-bold">127</Text>
+                <Text className="text-red-100 text-sm">Workouts</Text>
+              </View>
+              <View className="items-center">
+                <Text className="text-white text-xl font-bold">45</Text>
+                <Text className="text-red-100 text-sm">Days Streak</Text>
+              </View>
+              <View className="items-center">
+                <Text className="text-white text-xl font-bold">8.2k</Text>
+                <Text className="text-red-100 text-sm">Calories</Text>
+              </View>
+            </View>
+          </View>
+        </View>
+
+        {/* Settings Options */}
+        <View className="px-6">
+          <Text className="text-xl font-bold text-gray-800 mb-4">Settings</Text>
+
+          <View className="space-y-3">
+            {settingsOptions.map((option, index) => (
+              <TouchableOpacity
+                key={index}
+                className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex-row items-center"
+                activeOpacity={0.7}
+              >
+                <View
+                  className={`${option.color} w-12 h-12 rounded-xl items-center justify-center mr-4`}
+                >
+                  <Ionicons
+                    name={option.icon as any}
+                    size={22}
+                    color={option.iconColor}
+                  />
+                </View>
+
+                <View className="flex-1">
+                  <Text className="text-gray-900 font-semibold text-base mb-1">
+                    {option.title}
+                  </Text>
+                  <Text className="text-gray-500 text-sm">
+                    {option.subtitle}
+                  </Text>
+                </View>
+
+                <Ionicons name="chevron-forward" size={20} color="#9ca3af" />
+              </TouchableOpacity>
+            ))}
+          </View>
+
+          {/* Quick Actions */}
+          <View className="mt-8">
+            <Text className="text-xl font-bold text-gray-800 mb-4">
+              Quick Actions
+            </Text>
+
+            <View className="flex-row space-x-3 mb-4">
+              <TouchableOpacity className="bg-white rounded-2xl p-4 flex-1 items-center shadow-sm border border-gray-100">
+                <View className="bg-blue-100 w-12 h-12 rounded-xl items-center justify-center mb-3">
+                  <Ionicons name="download-outline" size={22} color="#2563eb" />
+                </View>
+                <Text className="text-gray-800 font-semibold text-sm text-center">
+                  Export Data
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity className="bg-white rounded-2xl p-4 flex-1 items-center shadow-sm border border-gray-100">
+                <View className="bg-green-100 w-12 h-12 rounded-xl items-center justify-center mb-3">
+                  <Ionicons name="share-outline" size={22} color="#16a34a" />
+                </View>
+                <Text className="text-gray-800 font-semibold text-sm text-center">
+                  Share App
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity className="bg-white rounded-2xl p-4 flex-1 items-center shadow-sm border border-gray-100">
+                <View className="bg-yellow-100 w-12 h-12 rounded-xl items-center justify-center mb-3">
+                  <Ionicons name="star-outline" size={22} color="#ca8a04" />
+                </View>
+                <Text className="text-gray-800 font-semibold text-sm text-center">
+                  Rate Us
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          {/* App Info Card */}
+          <View className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-6 mb-6">
+            <View className="flex-row items-center justify-between mb-4">
+              <View>
+                <Text className="text-white text-lg font-bold">
+                  GymTracker Pro
+                </Text>
+                <Text className="text-gray-300 text-sm">Version 2.1.0</Text>
+              </View>
+              <View className="bg-white/20 px-3 py-1 rounded-full">
+                <Text className="text-white text-xs font-semibold">
+                  PREMIUM
+                </Text>
+              </View>
+            </View>
+
+            <Text className="text-gray-300 text-sm mb-4 leading-5">
+              Track your fitness journey with advanced analytics and
+              personalized workout plans.
+            </Text>
+
+            <TouchableOpacity className="bg-white/10 py-2 px-4 rounded-xl self-start">
+              <Text className="text-white font-semibold text-sm">
+                Learn More
+              </Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* Logout Section */}
+          <View className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <Text className="text-lg font-semibold text-gray-800 mb-4">
+              Account Actions
+            </Text>
+
+            <TouchableOpacity
+              onPress={handleLogout}
+              activeOpacity={0.85}
+              className="flex-row items-center justify-center bg-gradient-to-r from-red-500 to-red-600 py-4 px-5 rounded-xl shadow-lg"
+            >
+              <Ionicons name="log-out-outline" size={22} color="white" />
+              <Text className="ml-3 text-white text-lg font-semibold">
+                Sign Out
+              </Text>
+            </TouchableOpacity>
+
+            <Text className="text-center text-gray-500 text-sm mt-4">
+              You'll be redirected to the login screen
+            </Text>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 };
