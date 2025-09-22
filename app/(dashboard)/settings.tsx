@@ -83,7 +83,7 @@ const SettingsScreen = () => {
             <View className="relative">
               <Image
                 source={{
-                  uri: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+                  uri: "",
                 }}
                 className="w-24 h-24 rounded-full border-4 border-white/20"
               />
@@ -93,21 +93,21 @@ const SettingsScreen = () => {
             </View>
 
             <Text className="text-white text-2xl font-bold mt-4 mb-1">
-              John Doe
+              samera
             </Text>
             <Text className="text-red-100 text-base">Fitness Enthusiast</Text>
 
             <View className="flex-row mt-4 space-x-8">
               <View className="items-center">
-                <Text className="text-white text-xl font-bold">127</Text>
+                <Text className="text-white text-xl font-bold">10</Text>
                 <Text className="text-red-100 text-sm">Workouts</Text>
               </View>
               <View className="items-center">
-                <Text className="text-white text-xl font-bold">45</Text>
+                <Text className="text-white text-xl font-bold">12</Text>
                 <Text className="text-red-100 text-sm">Days Streak</Text>
               </View>
               <View className="items-center">
-                <Text className="text-white text-xl font-bold">8.2k</Text>
+                <Text className="text-white text-xl font-bold">327</Text>
                 <Text className="text-red-100 text-sm">Calories</Text>
               </View>
             </View>

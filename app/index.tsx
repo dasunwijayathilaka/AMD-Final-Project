@@ -124,7 +124,7 @@ const Index = () => {
                   <Ionicons name="fitness-outline" size={32} color="white" />
                 </View>
                 <Text className="text-4xl font-black text-gray-900 mb-3 tracking-tight">
-                  FitnessTracker
+                  FitTrack
                 </Text>
                 <Text className="text-lg text-gray-600 text-center font-medium leading-relaxed">
                   Your ultimate fitness companion for tracking workouts,
