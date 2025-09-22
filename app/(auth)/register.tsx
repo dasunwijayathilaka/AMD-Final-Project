@@ -135,7 +135,7 @@ const Register = () => {
           className="px-6 pt-12 pb-4"
         >
           <TouchableOpacity
-            onPress={() => router.back()}
+            onPress={() =>
             className="flex-row items-center bg-white rounded-2xl px-4 py-3 self-start shadow-sm border border-gray-100"
             activeOpacity={0.8}
           >
