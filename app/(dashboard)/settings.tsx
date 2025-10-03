@@ -93,7 +93,7 @@ const SettingsScreen = () => {
             </View>
 
             <Text className="text-white text-2xl font-bold mt-4 mb-1">
-              samera
+              Dasun Tharaka
             </Text>
             <Text className="text-red-100 text-base">Fitness Enthusiast</Text>
 
